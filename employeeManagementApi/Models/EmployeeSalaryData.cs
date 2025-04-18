@@ -1,11 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace employeeManagementApi.Models
 {
-    [Table("project1.employeesalary")]
+    
     public class EmployeeSalaryData
     {
-        [Column("id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EpmSalaryId { get; set; }
         public int Employee_id { get; set; }
         public string? Title { get; set; }
@@ -15,9 +17,9 @@ namespace employeeManagementApi.Models
         public decimal Gross_salary { get; set; }
         public decimal Net_salary { get; set; }
         public DateTime salary_date { get; set; }
-        [Column("created_date")]
+        
         public DateTime EmpCreated_date { get; set; }
-        [Column("updated_date")]
+        
         public DateTime EmpUpdated_date { get; set; }
 
     }
